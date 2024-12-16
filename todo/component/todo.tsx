@@ -6,18 +6,15 @@ import { useState } from "react";
 
 export default function ToDo({ id, value, completed }) {
     const [isEditing, setIsEditing] = useState(false); 
-    const onClickButton = () => { 
-
-    };
 
     return (
-        <div className="flex w-full items-center gap-1">
-            <Checkbox checked={true} /> 
-            <p className="flex-1">{value}</p>  
-            <IconButton onClick={onClickButton}> 
+        <div className="w-full flex flex-row items-center gap-1">
+            <Checkbox checked={completed} readOnly/> 
+            <p className="flex-1 font-bold">{value} </p> 
+            <IconButton> 
                 <i className="fas fa-pen" /> 
             </IconButton> 
-            <IconButton onClick={onClickButton}> 
+            <IconButton> 
                 <i className="fas fa-trash" /> 
             </IconButton> 
         </div>
