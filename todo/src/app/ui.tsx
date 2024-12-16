@@ -18,7 +18,7 @@ export default function UI() {
             <ToDo 
                 id = {1}
                 value = {"New ToDo"}
-                completed = {false} />
+                completed = {true} />
         </div>
     );
 };
