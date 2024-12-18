@@ -1,22 +1,23 @@
 
-'use client';
+'use client'
 
-import { Checkbox, IconButton } from "@material-tailwind/react";
-import { useState } from "react";
+import { Checkbox } from "@material-tailwind/react";
+import { IconButton } from "@material-tailwind/react";
 
-export default function ToDo({ id, value, completed }) {
-    const [isEditing, setIsEditing] = useState(false); 
-
+export default function ToDo({id, value, completed}) {
     return (
-        <div className="w-full flex flex-row items-center gap-1">
-            <Checkbox checked={completed} readOnly/> 
-            <p className="flex-1 font-bold">{value} </p> 
-            <IconButton> 
-                <i className="fas fa-pen" /> 
-            </IconButton> 
-            <IconButton> 
-                <i className="fas fa-trash" /> 
-            </IconButton> 
+        <div className="w-full flex items-center gap-1">
+            <Checkbox 
+                checked={completed} />; 
+            <p className={`flex-1 ${completed && "line-through"}`}>
+                {value}
+            </p>
+            <IconButton>
+                <i className="fas fa-pen" />
+            </IconButton>
+            <IconButton>
+                <i className="fas fa-trash" />
+            </IconButton>
         </div>
     );
 };
