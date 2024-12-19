@@ -3,10 +3,10 @@
 import { Checkbox, IconButton } from "@material-tailwind/react";
 import { useState } from "react";
 
-export default function ToDo() {
+export default function ToDo({todo}) {
     const [isEditing, setIsEditing] = useState(false);
-    const [completed, setCompleted] = useState(false);
-    const [title, setTitle] = useState("");
+    const [completed, setCompleted] = useState(todo.completed);
+    const [title, setTitle] = useState(todo.title);
 
     return (
         <div className="w-full flex items-center">
