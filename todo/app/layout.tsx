@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "../config/material-tailwind-theme-provider"; 
+import ReactQueryClientProvider from "../config/ReactQueryClientProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,7 +25,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ThemeProvider>
     <html lang="en">
         <head>
             <link
@@ -33,11 +33,12 @@ export default function RootLayout({
                 integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
                 crossOrigin="anonymous"
                 referrerPolicy="no-referrer"/>
-        </head>
+        </head> 
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {children}
-      </body>
+            <ReactQueryClientProvider>
+                <ThemeProvider>{children}</ThemeProvider>
+            </ReactQueryClientProvider>
+        </body>
     </html>
-    </ThemeProvider>
   );
 }
