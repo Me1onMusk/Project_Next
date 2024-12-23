@@ -45,7 +45,7 @@ export default function Header() {
                     <Link className="mr-5 hover:text-gray-900 dark:hover:text-slate-50" href={'/project'}>프로젝트</Link>
                 </nav>
                 <div 
-                    className="relative w-16 h-8 flex items-center dark:gray-600 bg-gray-600 cursor-pointer rounded-full p-1"
+                    className="relative w-16 h-8 flex items-center dark:bg-blue-500 bg-gray-600 cursor-pointer rounded-full p-1"
                     onClick={onClickButton}>
                     <BsSunFill className='text-yellow-400' size={20} />
                     <div 

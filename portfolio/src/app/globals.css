@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -21,4 +22,16 @@ a {
 
 p {
     @apply text-slate-500 dark:text-slate-400
+}
+
+.paper_container h3 {
+    @apply text-gray-400 dark:text-indigo-500
+}
+
+.paper_container h2 {
+    @apply text-white font-bold dark:text-gray-900
+}
+
+.paper_container .bg {
+    @apply bg-slate-800 p-6 rounded-lg dark:bg-gray-100
 }
