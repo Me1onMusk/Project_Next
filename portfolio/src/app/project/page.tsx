@@ -4,7 +4,7 @@
 export default function Page() {
     return (
         <>
-            소개
+            프로젝트
         </>
     );
 };

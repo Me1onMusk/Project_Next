@@ -39,10 +39,10 @@ export default function Header() {
                     <span className="ml-3 text-xl">태영의 포트폴리오</span>
                 </a>
                 <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-                    <Link className="mr-5 hover:text-gray-900" href={'/'}>홈</Link>
-                    <a className="mr-5 hover:text-gray-900">소개</a>
-                    <a className="mr-5 hover:text-gray-900">자격증|수료증</a>
-                    <a className="mr-5 hover:text-gray-900">포트폴리오</a>
+                    <Link className="mr-5 hover:text-gray-900 dark:hover:text-slate-50" href={'/'}>홈</Link>
+                    <Link className="mr-5 hover:text-gray-900 dark:hover:text-slate-50" href={'/about-me'}>소개</Link>
+                    <Link className="mr-5 hover:text-gray-900 dark:hover:text-slate-50" href={'/paper'}>자격증|수료증</Link>
+                    <Link className="mr-5 hover:text-gray-900 dark:hover:text-slate-50" href={'/project'}>프로젝트</Link>
                 </nav>
                 <div 
                     className="relative w-16 h-8 flex items-center dark:gray-600 bg-gray-600 cursor-pointer rounded-full p-1"

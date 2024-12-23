@@ -4,7 +4,7 @@
 export default function Page() {
     return (
         <>
-            소개
+            자격증 & 수료증
         </>
     );
 };
