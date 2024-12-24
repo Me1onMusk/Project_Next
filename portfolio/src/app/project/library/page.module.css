@@ -1,0 +1,48 @@
+
+.container {
+    width: 50%;
+    max-width: 100%;
+    min-height: 70vh;
+    margin: 0px auto;
+    padding: 0px 15px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    @apply bg-blue-500 rounded 
+}
+
+.container header {
+    height: 60px;
+    font-size: 18px;
+    line-height: 60px;
+    font-weight: bold;
+}
+
+.container a {
+    color: black;
+    text-decoration: none;
+}
+
+.container main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.container main h3 {
+    padding-top: 10px;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 10px;
+    margin-bottom: 0px;
+}
+
+.container footer{
+    padding-top: 100px;
+
+    @apply bg-blue-500 rounded 
+}
+
+.container footer h3 {
+    color: black;
+}

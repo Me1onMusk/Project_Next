@@ -1,0 +1,33 @@
+
+.container {
+    display: flex; 
+    gap: 10px; 
+    margin-bottom: 20px; 
+}
+
+.container input {
+    flex: 1;
+    cursor: pointer;
+    padding: 15px;
+    border: 2px solid rgb(37, 147, 255); 
+    border-radius: 7px;
+}
+
+.container > input:focus {
+    outline: none;
+    border: 2px solid rgb(30, 125, 220);
+}
+
+.container button {
+    cursor: pointer;
+    width: 80px;
+    color: black;
+    font-weight: bold;
+    border: none;
+    background-color: rgb(255, 238, 88);
+    border-radius: 7px;
+}
+
+.container > button:hover {
+    background-color: rgb(233, 225, 153);
+}
