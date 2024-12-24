@@ -26,59 +26,7 @@ p {
 }
 
 /* 자격증 */
-.paper_container h3 {
-    @apply text-white dark:text-white
-}
-
-.paper_container h2 {
-    @apply text-yellow-400 font-bold dark:text-yellow-400
-}
-
-.paper_container p {
-    @apply text-white dark:text-slate-700 
-}
-
-.paper_container .bg {
-    @apply bg-gray-600 p-6 rounded-lg dark:bg-blue-500
-}
 
 /* 프로젝트 */
-.project_container .bg {
-    @apply bg-gray-600 dark:bg-blue-500 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative h-full
-}
-
-.project_container .bg h1 {
-    @apply text-yellow-400 font-bold dark:text-yellow-400
-}
-
-.project_container .bg h2 {
-    @apply text-black font-bold dark:text-white
-}
-
-.project_container .bg p {
-    @apply text-black dark:text-white
-}
-
-.project_container .bg a {
-    @apply text-black font-bold dark:text-gray-900
-}
 
 /* 투두리스트 */ 
-.todo_container {
-    @apply bg-gray-600 p-6 rounded-lg dark:bg-blue-500 
-    
-}
-
-.todo_container header {
-    @apply text-yellow-400 font-bold dark:text-yellow-400
-}
-
-.todo_container h3 {
-    @apply text-white font-bold dark:text-gray-900 
-}
-
-.todo_container footer {
-    @apply 
-    bg-gray-600 p-6 rounded-lg dark:bg-blue-500 
-    text-white font-bold dark:text-black
-}
