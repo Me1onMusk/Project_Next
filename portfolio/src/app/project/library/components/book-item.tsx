@@ -4,7 +4,8 @@ import style from './book-item.module.css';
 import Link from "next/link"; 
 import Image from "next/image"; 
 
-export default function BookItem({
+export default function BookItem(
+{
     id,
     title,
     subTitle,
