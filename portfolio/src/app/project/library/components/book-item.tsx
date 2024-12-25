@@ -1,11 +1,13 @@
 
+'use client';
+
 import type { BookData } from "../types_db"; 
+import { usePathname } from "next/navigation";
 import style from './book-item.module.css'; 
 import Link from "next/link"; 
 import Image from "next/image"; 
 
-export default function BookItem(
-{
+export default function BookItem({
     id,
     title,
     subTitle,
@@ -13,8 +15,12 @@ export default function BookItem(
     publisher,
     coverImgUrl
 }:BookData) {
+    const pathname = usePathname();          //현재 경로
+    if(pathname.includes('/library'))
+        console.log(`포함: ${pathname}`);
+
     return (
-        <Link href={`./library/book/${id}`} className={style.container}>
+        <Link href={`/project/library/book/${id}`} className={style.container}>
             <Image  
                 src={coverImgUrl} 
                 width={80} 

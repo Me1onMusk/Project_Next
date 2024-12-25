@@ -1,0 +1,10 @@
+
+.Header {
+    display: flex;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.Header .a {
+    display: flex; 
+}

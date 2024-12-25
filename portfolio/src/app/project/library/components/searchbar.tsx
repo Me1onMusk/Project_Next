@@ -1,9 +1,9 @@
 
 'use client';
 
-import style from './searchbar.module.css';
-import { useEffect, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import style from './searchbar.module.css'; 
+import { useEffect, useState } from "react"; 
+import { useRouter, useSearchParams } from "next/navigation"; 
 
 export default function SearchBar() {
     const [search, setSearch] = useState("");
@@ -25,7 +25,7 @@ export default function SearchBar() {
     // 버튼 관련 //
     const onSubmit = () => { 
         if(!search || search === q) return;  //입력값이 없으면
-        router.push(`./library/search?q=${search}`);
+        router.push(`/project/library/search?q=${search}`);
     }; 
 
     // 검색 관련 //
