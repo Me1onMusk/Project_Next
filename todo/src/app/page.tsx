@@ -1,10 +1,10 @@
 
-
+import UI from "./ui";
 
 export default function Home() {
   return (
-    <div>
-
-    </div>
+    <main>
+        <UI />
+    </main>
   );
-}
+};
