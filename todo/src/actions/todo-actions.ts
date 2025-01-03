@@ -65,6 +65,16 @@ export async function updateToDo(todo: TodoRowUpdate) {
 };
 
 // ToDo 삭제하기 (Delete) //
-export async function deleteToDo() {
+export async function deleteToDo(id: number) {
+    const supabase = await createServerSupabaseClient(); 
 
+    const { data, error } = await supabase
+        .from('todo')
+        .delete()
+        .eq("id", id);
+
+    if(error)
+        handleError(error);
+    
+    return data;
 };

@@ -1,6 +1,9 @@
 
-import { Checkbox } from "@material-tailwind/react";
+import { updateToDo, deleteToDo } from "@/actions/todo-actions";
+import { queryClient } from "@/config/ReactQueryClientProvider";
+import { Checkbox, Spinner } from "@material-tailwind/react";
 import { IconButton } from "@material-tailwind/react";
+import { useMutation } from "@tanstack/react-query";
 import { useState } from "react";
 
 export default function ToDo({todo}) {
@@ -8,11 +11,37 @@ export default function ToDo({todo}) {
     const [isEditing, setIsEditing] = useState(false);
     const [completed, setCompleted] = useState(todo.completed);
     const [title, setTitle] = useState(todo.title);
+
+    const updateToDoMutation = useMutation({
+        mutationFn: () => updateToDo({
+            id: todo.id,
+            title,
+            completed
+        }),
+        onSuccess: () => {
+            setIsEditing(false)
+            queryClient.invalidateQueries({
+                queryKey: ['todos']
+            })
+        }
+    });
+
+    const deleteToDoMutation = useMutation({
+        mutationFn: () => deleteToDo(todo.id),
+        onSuccess: () => {
+            queryClient.invalidateQueries({
+                queryKey: ['todos']
+            })
+        }
+    });
     
     return(
-        <div className="w-full flex items-center gap-2 p-5 pb-10">
+        <div className="w-full flex items-center gap-2 p-5 pb-0">
             <Checkbox 
-                onChange={e => setCompleted(e.target.checked)}
+                onChange={async(e) => {
+                    await setCompleted(e.target.checked)
+                    await updateToDoMutation.mutate()
+                }}
                 checked={completed} />
             
             {
@@ -31,8 +60,16 @@ export default function ToDo({todo}) {
                 isEditing ? 
                 (
                     <IconButton
-                        onClick={() => setIsEditing(false)}>
-                        <i className="fas fa-check" />
+                        onClick={async() => {
+                            await setIsEditing(false)
+                            await updateToDoMutation.mutate()
+                        }}>
+                        {
+                            updateToDoMutation.isPending ? 
+                            <Spinner />
+                            :
+                            <i className="fas fa-check" />
+                        }
                     </IconButton>
                 ) :
                 (
@@ -43,8 +80,14 @@ export default function ToDo({todo}) {
                 )
             }
 
-            <IconButton>
-                <i className="fas fa-trash" />
+            <IconButton
+                onClick={() => deleteToDoMutation.mutate()}>
+                {
+                    deleteToDoMutation.isPending ?
+                    <Spinner />
+                    :
+                    <i className="fas fa-trash" />
+                }
             </IconButton>
             
         </div>
