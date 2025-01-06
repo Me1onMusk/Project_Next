@@ -9,4 +9,4 @@ export default function ReactQueryClientProvider({children}: React.PropsWithChil
     return (
         <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
     );
-};
+}
