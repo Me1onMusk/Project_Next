@@ -8,14 +8,13 @@ function handleError(error) {
         throw error;
 };
 
-export async function searchMovies({search = ''}) {  
+export async function searchMovies() {  
     const supabase = await createServerSupabaseClient();
 
     const { data, error } = await supabase
         .from('movie')
-        .select('*')
-        .like('title', `%${search}%`);
-
+        .select('*');
+    
     handleError(error);
     
     return data;

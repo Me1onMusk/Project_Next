@@ -2,17 +2,19 @@
 'use client';
 
 import MovieCard from "./movie-card";
-import { useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 import { searchMovies } from "@/actions/movieActions";
 import { Spinner } from "@material-tailwind/react";
-import { useRecoilValue } from "recoil";
-import { searchState } from "@/utils/recoil/atoms";
+import { useInView } from 'react-intersection-observer';
 
-export default function MovieCardList() {
-    const search = useRecoilValue(searchState);
-    const getAllMoviesQuery = useQuery({
-        queryKey: ['movie', search],
-        queryFn: () => searchMovies(search)
+export default function MovieCardList() {  
+    const getAllMoviesQuery = useQuery({ 
+        queryKey: ['movie'],
+        queryFn: () => searchMovies()
+    });
+
+    const { ref, inView } = useInView({
+        threshold: 0
     });
 
     return (
@@ -21,7 +23,14 @@ export default function MovieCardList() {
                 getAllMoviesQuery.isLoading && <Spinner />
             }
             {
-                getAllMoviesQuery.data && getAllMoviesQuery.data.map(movie => <MovieCard key={movie.id} movie={movie} />)
+                getAllMoviesQuery.data && (
+                <>
+                    { 
+                        getAllMoviesQuery.data.map(movie => <MovieCard key={movie.id} movie={movie} />) 
+                    }
+                    <div ref = {ref}></div>
+                </>
+                )
             }
         </div>
     );
