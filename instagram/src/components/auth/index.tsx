@@ -3,16 +3,18 @@
 
 import { useState } from "react"; 
 import SignIn from "./sign-in"; 
-import SignUP from "./sign-up"; 
+import SignUp from "./sign-up"; 
 
 export default function Auth() {
 
-    const [view, setView] = useState('SIGNUP');
+    const [view, setView] = useState('SIGNIN');
 
     return (
-        <main>
+        <main className="h-screen w-screen flex justify-center items-center bg-gradient-to-br from-purple-50 to-light-blue-50">
             {
-                view === 'SIGNUP' ? <SignUP /> : <SignIn />
+                view === 'SIGNIN' ? 
+                (<SignIn setView={setView} />) : 
+                (<SignUp setView={setView} />) 
             }
         </main>
     );
