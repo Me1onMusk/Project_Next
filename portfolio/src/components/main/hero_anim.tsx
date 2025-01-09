@@ -3,7 +3,7 @@
 
 import React from 'react';
 import Lottie from 'react-lottie-player';
-import lottieJson from '../../public/anim.json';
+import lottieJson from '../../../public/anim/anim.json';
 
 export default function Hero_Anim() {
     return (
