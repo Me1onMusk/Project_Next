@@ -8,7 +8,7 @@ import { useSearchStore } from '../utils/zustand/store';
 
 export default function Header() {
 
-    const { searchTerm, setSearchTerm } = useSearchStore();
+    const { searchTerm, setSearchTerm } = useSearchStore(); 
 
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(e.target.value); // 검색어 상태 업데이트
