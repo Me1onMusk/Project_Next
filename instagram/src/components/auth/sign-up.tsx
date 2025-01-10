@@ -65,7 +65,7 @@ export default function SignUp({ setView }) {
             }
         )
     });
-
+    
     return ( 
         <div className="flex flex-col">
             <div className="pt-10 pb-6 mb-5 px-10 w-full flex flex-col items-center justify-center max-w-lg border rounded-lg border-gray-400 bg-white gap-5"> 

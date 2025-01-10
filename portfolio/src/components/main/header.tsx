@@ -5,9 +5,17 @@ import { useTheme } from 'next-themes'
 import { FaMoon } from 'react-icons/fa';
 import Link from 'next/link';
 import { BsSunFill } from 'react-icons/bs';
-import style from './header.module.css'; 
+import style from './header.module.css';
+import { createBrowserSupabaseClient } from "@/utils/supabase/client";
 
-export default function Header() {
+export default function Header({ accessToken, session }) {
+
+    const supabase = createBrowserSupabaseClient(); 
+
+    const logOut = () => {
+        supabase.auth.signOut();
+    };
+
     const { theme, setTheme } = useTheme(); 
     const onClickButton = () => {
         setTheme(theme === 'dark' ? 'light' : 'dark')
@@ -71,28 +79,52 @@ export default function Header() {
                     <Link className="mr-5 hover:text-gray-900 dark:hover:text-slate-50" href={'/about-me'}>소개</Link>
                     <Link className="mr-5 hover:text-gray-900 dark:hover:text-slate-50" href={'/paper'}>자격증|수료증</Link>
                     <Link className="mr-5 hover:text-gray-900 dark:hover:text-slate-50" href={'/project'}>프로젝트</Link>
+
+                    <div 
+                        className="relative w-14 h-8 flex items-center dark:bg-blue-500 bg-gray-600 cursor-pointer rounded-full p-1"
+                        onClick={onClickButton}>
+                        <BsSunFill className='text-yellow-400' size={20} />
+                        <div 
+                            className='absolute bg-white w-6 h-6 rounded-full shadow-md transfor transition-transform duration-300'
+                            style={theme === 'light' ? {left:'2px'} : {right:'2px'}}>
+                        </div>
+                        <FaMoon className='ml-auto text-yellow-400' size={18} /> 
+                    </div>
+
+                        {
+                            accessToken ?
+                            (
+                                <Link href={'/'}>
+                                    <button
+                                        onClick={() => logOut() }
+                                        className="inline-flex text-white bg-blue-500 border-0 py-1 px-3 focus:outline-none hover:bg-blue-600 
+                                            rounded-lg text-sm ml-5 mr-5 justify-center items-center">
+                                        로그아웃
+                                        <i className="fa-solid fa-right-from-bracket pl-2" />
+                                    </button>
+                                    
+                                </Link>
+                            ) : 
+                            (
+                                <Link href={'/auth'}>
+                                    <button
+                                        onClick={() => {}}
+                                        className="inline-flex text-white bg-blue-500 border-0 py-1 px-3 focus:outline-none hover:bg-blue-600 
+                                            rounded-lg text-sm ml-5 mr-5 justify-center items-center">
+                                        로그인
+                                        <i className="fa-solid fa-right-to-bracket pl-2" />
+                                    </button>
+                                </Link>
+                            )
+                        }
+
+                    <h4 className="hover:text-gray-900 dark:hover:text-slate-50">
+                        { session?.user?.email?.split('@')?.[0] }
+                    </h4>
                 </nav>
 
-                <div 
-                    className="relative w-16 h-8 flex items-center dark:bg-blue-500 bg-gray-600 cursor-pointer rounded-full p-1"
-                    onClick={onClickButton}>
-                    <BsSunFill className='text-yellow-400' size={20} />
-                    <div 
-                        className='absolute bg-white w-6 h-6 rounded-full shadow-md transfor transition-transform duration-300'
-                        style={theme === 'light' ? {left:'2px'} : {right:'2px'}}>
-                    </div>
-                    <FaMoon className='ml-auto text-yellow-400' size={18} /> 
-                </div>
-
-                <Link href={'/auth'}>
-                    <button
-                        className="inline-flex text-white bg-blue-500 border-0 py-1 px-3 focus:outline-none hover:bg-blue-600 rounded-lg text-sm ml-5 justify-center items-center">
-                        로그인
-                        <i className='fas fa-search pl-2' />
-                    </button>
-                </Link>
             </div>
         </header>
         </>
     );
-};
+}; 
