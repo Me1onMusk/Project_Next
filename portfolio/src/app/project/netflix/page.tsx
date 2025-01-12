@@ -1,10 +1,12 @@
 
+'use client';
 
+import Header from "@/components/netflix/header";
 
 export default function Page() {
     return(
-        <div>
-            넷플릭스
+        <div className="container mx-auto">
+            <Header />
         </div>
     );
 };
