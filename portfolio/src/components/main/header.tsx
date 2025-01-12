@@ -71,14 +71,14 @@ export default function Header({ accessToken, session }) {
                                 22.86-22.86 22.86s-22.86-10.235-22.86-22.86s10.235-22.86 22.86-22.86Z">
                         </path>
                     </svg>
-                    <Link className="ml-3 text-xl text-slate-500 hover:text-slate-700 dark:text-slate-400" href={'/'}>태영의 포트폴리오</Link>
+                    <Link className="ml-3 text-xl text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white" href={'/'}>태영의 포트폴리오</Link>
                 </div>
 
                 <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-                    <Link className="mr-5 text-slate-500 hover:text-slate-700 dark:text-slate-400" href={'/'}>홈</Link>
-                    <Link className="mr-5 text-slate-500 hover:text-slate-700 dark:text-slate-400" href={'/about-me'}>소개</Link>
-                    <Link className="mr-5 text-slate-500 hover:text-slate-700 dark:text-slate-400" href={'/paper'}>자격증|수료증</Link>
-                    <Link className="mr-5 text-slate-500 hover:text-slate-700 dark:text-slate-400" href={'/project'}>프로젝트</Link>
+                    <Link className="mr-5 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white" href={'/'}>홈</Link>
+                    <Link className="mr-5 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white" href={'/about-me'}>소개</Link>
+                    <Link className="mr-5 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white" href={'/paper'}>자격증|수료증</Link>
+                    <Link className="mr-5 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white" href={'/project'}>프로젝트</Link>
 
                     <div 
                         className="relative w-14 h-8 flex items-center dark:bg-blue-500 bg-gray-600 cursor-pointer rounded-full p-1"
