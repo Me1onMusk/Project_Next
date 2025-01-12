@@ -12,7 +12,7 @@ export default function Page() {
                 <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
                 
                     <div className="lg:w-1/2 w-full mb-6 lg:mb-0">
-                        <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">프로젝트</h1>
+                        <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-slate-900 dark:text-white">프로젝트</h1>
                         <div className="h-1 w-28 bg-green-500 rounded"></div>
                     </div>
                     
@@ -32,13 +32,13 @@ export default function Page() {
                                     height={400}
                                     alt="blog" />
                                 <div className="p-6">
-                                    <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CATEGORY</h2>
-                                    <h1 className="title-font text-lg font-medium text-gray-900 mb-3">책 검색</h1>
-                                    <p className="leading-relaxed mb-3">
+                                    <h2 className="tracking-widest text-xs title-font font-medium text-slate-900 dark:text-white mb-1">CATEGORY</h2>
+                                    <h1 className="title-font text-lg font-medium text-slate-900 dark:text-white mb-3">책 검색</h1>
+                                    <p className="leading-relaxed mb-3 text-slate-500 dark:text-slate-400">
                                         Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.
                                     </p>
                                     <div className="flex items-center flex-wrap ">
-                                        <Link className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0" href={'/project/library'}>보러가기
+                                        <Link className="text-green-500 inline-flex items-center md:mb-2 lg:mb-0" href={'/project/bookstore'}>보러가기
                                             <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                             <path d="M5 12h14"></path>
                                             <path d="M12 5l7 7-7 7"></path>
@@ -59,10 +59,12 @@ export default function Page() {
                                     alt="blog" />
                                 <div className="p-6">
                                     <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CATEGORY</h2>
-                                    <h1 className="title-font text-lg font-medium text-gray-900 mb-3">감성 일기장</h1>
-                                    <p className="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+                                    <h1 className="title-font text-lg font-medium text-slate-900 dark:text-white mb-3">감성 일기장</h1>
+                                    <p className="leading-relaxed mb-3 text-slate-500 dark:text-slate-400">
+                                        Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.
+                                    </p>
                                     <div className="flex items-center flex-wrap">
-                                        <Link className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0" href={'/project/diary'}>보러가기</Link>
+                                        <Link className="text-green-500 inline-flex items-center md:mb-2 lg:mb-0" href={'/project/diary'}>보러가기</Link>
                                         <a>
                                             <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                             <path d="M5 12h14"></path>
@@ -84,10 +86,12 @@ export default function Page() {
                                     alt="blog" />
                                 <div className="p-6">
                                     <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CATEGORY</h2>
-                                    <h1 className="title-font text-lg font-medium text-gray-900 mb-3">투두 리스트</h1>
-                                    <p className="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+                                    <h1 className="title-font text-lg font-medium text-slate-900 dark:text-white mb-3">투두 리스트 (on browser)</h1>
+                                    <p className="leading-relaxed mb-3 text-slate-500 dark:text-slate-400">
+                                        Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.
+                                    </p>
                                     <div className="flex items-center flex-wrap ">
-                                        <Link className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0" href={'/project/diary'}>보러가기</Link>
+                                        <Link className="text-green-500 inline-flex items-center md:mb-2 lg:mb-0" href={'/project/diary'}>보러가기</Link>
                                         <a>
                                             <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                             <path d="M5 12h14"></path>
@@ -117,10 +121,12 @@ export default function Page() {
                                     alt="blog" />
                             <div className="p-6">
                                 <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CATEGORY</h2>
-                                <h1 className="title-font text-lg font-medium text-gray-900 mb-3">넷플릭스</h1>
-                                <p className="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+                                <h1 className="title-font text-lg font-medium text-slate-900 dark:text-white mb-3">넷플릭스</h1>
+                                <p className="leading-relaxed mb-3 text-slate-500 dark:text-slate-400">
+                                    Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.
+                                </p>
                                     <div className="flex items-center flex-wrap ">
-                                        <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+                                        <a className="text-green-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
                                             <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                             <path d="M5 12h14"></path>
                                             <path d="M12 5l7 7-7 7"></path>
@@ -141,10 +147,12 @@ export default function Page() {
                                     alt="blog" />
                                 <div className="p-6">
                                     <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CATEGORY</h2>
-                                    <h1 className="title-font text-lg font-medium text-gray-900 mb-3">인스타그램</h1>
-                                    <p className="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+                                    <h1 className="title-font text-lg font-medium text-slate-900 dark:text-white mb-3">인스타그램</h1>
+                                    <p className="leading-relaxed mb-3 text-slate-500 dark:text-slate-400">
+                                        Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.
+                                    </p>
                                     <div className="flex items-center flex-wrap">
-                                        <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+                                        <a className="text-green-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
                                             <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                             <path d="M5 12h14"></path>
                                             <path d="M12 5l7 7-7 7"></path>
@@ -165,17 +173,20 @@ export default function Page() {
                                     alt="blog" />
                                 <div className="p-6">
                                     <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">CATEGORY</h2>
-                                    <h1 className="title-font text-lg font-medium text-gray-900 mb-3">투두 리스트 (with supabase)</h1>
-                                    <p className="leading-relaxed mb-3">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
+                                    <h1 className="title-font text-lg font-medium text-slate-900 dark:text-white mb-3">투두 리스트 (with supabase)</h1>
+                                    <p className="leading-relaxed mb-3 text-slate-500 dark:text-slate-400">
+                                        Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.
+                                    </p>
                                     <div className="flex items-center flex-wrap ">
-                                        <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+                                        <Link className="text-green-500 inline-flex items-center md:mb-2 lg:mb-0" href={'/project/todo-supabase'}>
+                                            보러가기
+                                        </Link>
                                         <svg 
                                             className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" 
                                             fill="none" strokeLinecap="round" strokeLinejoin="round">
                                         <path d="M5 12h14"></path>
                                         <path d="M12 5l7 7-7 7"></path>
                                         </svg>
-                                        </a>
                                     </div>
                                 </div>
                             </div>

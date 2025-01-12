@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useTheme } from 'next-themes'
+import { useTheme } from 'next-themes';
 import { FaMoon } from 'react-icons/fa';
 import Link from 'next/link';
 import { BsSunFill } from 'react-icons/bs';
@@ -71,14 +71,14 @@ export default function Header({ accessToken, session }) {
                                 22.86-22.86 22.86s-22.86-10.235-22.86-22.86s10.235-22.86 22.86-22.86Z">
                         </path>
                     </svg>
-                    <Link className="ml-3 text-xl" href={'/'}>태영의 포트폴리오</Link>
+                    <Link className="ml-3 text-xl text-slate-500 hover:text-slate-700 dark:text-slate-400" href={'/'}>태영의 포트폴리오</Link>
                 </div>
 
                 <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-                    <Link className="mr-5 hover:text-gray-900 dark:hover:text-slate-50" href={'/'}>홈</Link>
-                    <Link className="mr-5 hover:text-gray-900 dark:hover:text-slate-50" href={'/about-me'}>소개</Link>
-                    <Link className="mr-5 hover:text-gray-900 dark:hover:text-slate-50" href={'/paper'}>자격증|수료증</Link>
-                    <Link className="mr-5 hover:text-gray-900 dark:hover:text-slate-50" href={'/project'}>프로젝트</Link>
+                    <Link className="mr-5 text-slate-500 hover:text-slate-700 dark:text-slate-400" href={'/'}>홈</Link>
+                    <Link className="mr-5 text-slate-500 hover:text-slate-700 dark:text-slate-400" href={'/about-me'}>소개</Link>
+                    <Link className="mr-5 text-slate-500 hover:text-slate-700 dark:text-slate-400" href={'/paper'}>자격증|수료증</Link>
+                    <Link className="mr-5 text-slate-500 hover:text-slate-700 dark:text-slate-400" href={'/project'}>프로젝트</Link>
 
                     <div 
                         className="relative w-14 h-8 flex items-center dark:bg-blue-500 bg-gray-600 cursor-pointer rounded-full p-1"
@@ -91,32 +91,32 @@ export default function Header({ accessToken, session }) {
                         <FaMoon className='ml-auto text-yellow-400' size={18} /> 
                     </div>
 
-                        {
-                            accessToken ?
-                            (
-                                <Link href={'/'}>
-                                    <button
-                                        onClick={() => logOut() }
-                                        className="inline-flex text-white bg-blue-500 border-0 py-1 px-3 focus:outline-none hover:bg-blue-600 
-                                            rounded-lg text-sm ml-5 mr-5 justify-center items-center">
-                                        로그아웃
-                                        <i className="fa-solid fa-right-from-bracket pl-2" />
-                                    </button>
-                                    
-                                </Link>
-                            ) : 
-                            (
-                                <Link href={'/auth'}>
-                                    <button
-                                        onClick={() => {}}
-                                        className="inline-flex text-white bg-blue-500 border-0 py-1 px-3 focus:outline-none hover:bg-blue-600 
-                                            rounded-lg text-sm ml-5 mr-5 justify-center items-center">
-                                        로그인
-                                        <i className="fa-solid fa-right-to-bracket pl-2" />
-                                    </button>
-                                </Link>
-                            )
-                        }
+                    {
+                        accessToken ?
+                        (
+                            <Link href={'/'}>
+                                <button
+                                    onClick={() => logOut() }
+                                    className="inline-flex text-white bg-blue-500 border-0 py-1 px-3 focus:outline-none hover:bg-blue-600 
+                                        rounded-lg text-sm ml-5 mr-5 justify-center items-center">
+                                    로그아웃
+                                    <i className="fa-solid fa-right-from-bracket pl-2" />
+                                </button>
+                                
+                            </Link>
+                        ) : 
+                        (
+                            <Link href={'/auth'}>
+                                <button
+                                    onClick={() => {}}
+                                    className="inline-flex text-white bg-blue-500 border-0 py-1 px-3 focus:outline-none hover:bg-blue-600 
+                                        rounded-lg text-sm ml-5 mr-5 justify-center items-center">
+                                    로그인
+                                    <i className="fa-solid fa-right-to-bracket pl-2" />
+                                </button>
+                            </Link>
+                        )
+                    }
 
                     <h4 className="hover:text-gray-900 dark:hover:text-slate-50">
                         { session?.user?.email?.split('@')?.[0] }

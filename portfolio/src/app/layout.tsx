@@ -1,10 +1,12 @@
 
 import type { Metadata } from "next"; 
 import "./globals.css"; 
-import {ThemeProvider} from "next-themes"; 
+import { ThemeProvider } from "next-themes"; 
+// import { ThemeProvider } from "../config/material-tailwind-theme-provider";
 import Header from "@/components/main/header"; 
 import Footer from "@/components/main/footer"; 
 import { createServerSupabaseClient } from "@/utils/supabase/server";  
+import ReactQueryClientProvider from "../config/ReactQueryClientProvider";
 import AuthProvider from "@/config/AuthProvider";
 
 export const metadata: Metadata = {
@@ -18,7 +20,7 @@ export default async function RootLayout({children}: Readonly<{children: React.R
     const { data: {session} } = await supabase.auth.getSession();
 
     return (
-        <html lang="kr">
+        <html lang="en">
             <head>
                 <link
                     rel="stylesheet"
@@ -26,8 +28,9 @@ export default async function RootLayout({children}: Readonly<{children: React.R
                     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
                     crossOrigin="anonymous"
                     referrerPolicy="no-referrer" />
-            </head>
-            <body className="bg-primary">
+            </head> 
+            <body className="bg-white dark:bg-slate-800">
+                <ReactQueryClientProvider>
                 <ThemeProvider attribute="class" defaultTheme="system">
                     <AuthProvider accessToken={session?.access_token}>
                         <Header accessToken={session?.access_token} session={session} />
@@ -35,6 +38,7 @@ export default async function RootLayout({children}: Readonly<{children: React.R
                         <Footer /> 
                     </AuthProvider>
                 </ThemeProvider>
+                </ReactQueryClientProvider>
             </body>
         </html>
     );
