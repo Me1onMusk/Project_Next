@@ -15,9 +15,9 @@ export default async function Page() {
                     session?.user ?
                     (
                         <MainLayout user={session?.user} />
-                    ) :
+                    ) : 
                     (
-                        <Auth path={'instagram'} />
+                        <Auth />
                     )
                 }
             </div>

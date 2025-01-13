@@ -17,7 +17,7 @@ export async function searchMovies({ search, page, pageSize }) {
         .like("title", `%${search}%`)
         .range((page - 1) * pageSize, page * pageSize - 1);
   
-    const hasNextPage = count > page * pageSize; 
+    const hasNextPage = (count ?? 0) > page * pageSize; 
     
     if (error) {
         console.error(error);

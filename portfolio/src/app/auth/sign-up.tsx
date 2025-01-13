@@ -20,21 +20,21 @@ export default function SignUp({ setView }) {
                 <img 
                     className="w-60 mb-6 hidden dark:block"
                     src={'/logo/logo_white.png'} />  
-                <Input
+                <input
                     value={email}
                     type="email" 
                     onChange={ e => setEmail(e.target.value) }
                     className="w-full rounded-md"/>
-                <Input
+                <input
                     value={password}
                     type="password" 
                     onChange={ e => setPassword(e.target.value) }
                     className="w-full rounded-md" />
-                <Button 
+                <button 
                     className="w-full text-md text-white py-1 bg-green-600 hover:bg-green-500" 
                     color="light-blue">
                     회원가입
-                </Button>
+                </button>
             </div>
             <div className="py-4 w-full text-center max-w-lg border border-gray-400 bg-white dark:bg-slate-800 gap-5 rounded-lg">
                 이미 계정이 있으신가요?

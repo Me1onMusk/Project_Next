@@ -8,10 +8,10 @@ export async function generateMetadata({ params, searchParams }) {
     
     return (
         {
-            title: movie.title,
-            description: movie.overview,
+            title: movie!.title,
+            description: movie!.overview,
             openGraph: {
-                images: [movie.image_url]
+                images: [movie!.image_url]
             }
         }
     );
