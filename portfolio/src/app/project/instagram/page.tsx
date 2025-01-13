@@ -17,7 +17,7 @@ export default async function Page() {
                         <MainLayout user={session?.user} />
                     ) : 
                     (
-                        <Auth />
+                        <Auth path={'insta'} />
                     )
                 }
             </div>

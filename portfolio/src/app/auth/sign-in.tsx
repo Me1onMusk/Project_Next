@@ -7,26 +7,25 @@ import { useState } from "react";
 
 interface SignInProps {
     setView: React.Dispatch<React.SetStateAction<string>>;
+    path?: string;
 };
 
 // 로그인 //
-export default function SignIn({ setView }: SignInProps) {
+export default function SignIn({ setView, path }: SignInProps) {
 
     const supabase = createBrowserSupabaseClient();
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState(''); 
-
-    console.log('카카오 로그인');
     
     // 카카오 로그인 인증 // 
     const signInWithKakao = async () => {
+        console.log("실행");
         const { data, error } = await supabase.auth.signInWithOAuth({
             provider: 'kakao',
-            options: {
-                redirectTo: process.env.NEXT_PUBLIC_VERCEL_URL ?
-                    `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/auth/callback` : 
-                    // (path === 'insta' ? "http://localhost:3000/auth/insta-callback" : "http://localhost:3000/auth/callback")
-                    "http://localhost:3000/auth/callback"
+            options: {  //로그인 성공 후 리다이렉트될 URL
+                redirectTo: process.env.NEXT_PUBLIC_VERCEL_URL && (path === 'insta') ?
+                    `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/project/instagram` : 
+                    `http://${process.env.NEXT_PUBLIC_VERCEL_URL}/`
             }
         });
     }; 
@@ -46,14 +45,16 @@ export default function SignIn({ setView }: SignInProps) {
                     value={email}
                     type="email" 
                     onChange={ e => setEmail(e.target.value) }
-                    className="w-full rounded-md"/>
+                    placeholder="이메일"
+                    className="w-full p-1 rounded-lg dark:bg-white border-black border text-black dark:text-black pl-2"/>
                 <input
                     value={password}
                     type="password" 
                     onChange={ e => setPassword(e.target.value) }
-                    className="w-full rounded-md" />
+                    placeholder="비밀번호"
+                    className="w-full p-1 rounded-lg dark:bg-white border-black border text-black dark:text-black pl-2" />
                 <button 
-                    className="w-full text-md text-white py-1 bg-blue-500 hover:bg-blue-600" 
+                    className="w-full text-md text-white py-1 bg-blue-500 hover:bg-blue-600 rounded-lg" 
                     color="light-blue"
                     onClick={() => {}} >
                     로그인

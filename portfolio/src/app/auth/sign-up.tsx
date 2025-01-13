@@ -1,11 +1,14 @@
 
 'use client';
 
-import { Button, Input } from "@material-tailwind/react";
 import { useState } from "react";
 
+interface SignUpProps {
+    setView: React.Dispatch<React.SetStateAction<string>>;
+};
+
 // 회원 가입 //
-export default function SignUp({ setView }) {
+export default function SignUp({ setView }: SignUpProps) {
 
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');

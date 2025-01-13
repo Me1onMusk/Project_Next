@@ -7,7 +7,6 @@ import Link from 'next/link';
 import { BsSunFill } from 'react-icons/bs';
 import style from './header.module.css';
 import { createBrowserSupabaseClient } from "@/utils/supabase/client";
-import Auth from '@/app/auth/page';
 
 export default function Header({ accessToken, session }) {
 
@@ -18,6 +17,7 @@ export default function Header({ accessToken, session }) {
     };
 
     const { theme, setTheme } = useTheme(); 
+
     const onClickButton = () => {
         setTheme(theme === 'dark' ? 'light' : 'dark')
     };
