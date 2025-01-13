@@ -6,11 +6,13 @@ import { Button, Input } from "@material-tailwind/react";
 import { useState } from "react";
 
 // 로그인 //
-export default function SignIn({ setView }) {
+export default function SignIn({ setView, path }) {
 
     const supabase = createBrowserSupabaseClient();
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState(''); 
+
+    console.log('카카오 로그인');
     
     // 카카오 로그인 인증 // 
     const signInWithKakao = async () => {
@@ -18,8 +20,8 @@ export default function SignIn({ setView }) {
             provider: 'kakao',
             options: {
                 redirectTo: process.env.NEXT_PUBLIC_VERCEL_URL ?
-                    `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/auth/callback` :
-                    "http://localhost:3000/auth/callback"
+                    `https://${process.env.NEXT_PUBLIC_VERCEL_URL}/auth/callback` : 
+                    (path === "instagram" ? "http://localhost:3000/auth/insta-callback" : "http://localhost:3000/auth/callback")
             }
         });
     }; 

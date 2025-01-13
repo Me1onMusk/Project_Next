@@ -1,27 +1,25 @@
 
-import { Home, People, Send, Search } from "@mui/icons-material";
-import Link from "next/link";
+import Auth from "@/app/auth/page";
+import MainLayout from "@/components/instagram/main-layout";
+import { createServerSupabaseClient } from "@/utils/supabase/server";
 
-export default function Page() {
+export default async function Page() {
+
+    const supabase = await createServerSupabaseClient();
+    const { data: {session} } = await supabase.auth.getSession();
+
     return (
         <div className="container mx-auto">
-            <aside className="p-6"> 
-                <div className="flex flex-col gap-4">
-                    <Link href={'/project/instagram'}> 
-                        <Home className='text-2xl mb-10' />
-                    </Link>
-                    <Link href={'/project/instagram'}>
-                        <People className='text-2xl' />
-                    </Link>
-                    <Link href={'/project/instagram'}>
-                        <Search className='text-2xl' />
-                    </Link>
-                    <Link href={'/project/instagram'}>
-                        <Send className='text-2xl' />
-                    </Link>
-                </div>
-            </aside>
             <div>
+                {
+                    session?.user ?
+                    (
+                        <MainLayout user={session?.user} />
+                    ) :
+                    (
+                        <Auth path={'instagram'} />
+                    )
+                }
             </div>
         </div>
     );

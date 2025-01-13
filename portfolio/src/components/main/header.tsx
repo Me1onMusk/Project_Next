@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { BsSunFill } from 'react-icons/bs';
 import style from './header.module.css';
 import { createBrowserSupabaseClient } from "@/utils/supabase/client";
+import Auth from '@/app/auth/page';
 
 export default function Header({ accessToken, session }) {
 
@@ -97,12 +98,11 @@ export default function Header({ accessToken, session }) {
                             <Link href={'/'}>
                                 <button
                                     onClick={() => logOut() }
-                                    className="inline-flex text-white bg-blue-500 border-0 py-1 px-3 focus:outline-none hover:bg-blue-600 
+                                    className="inline-flex bg-red-500 text-slate-100 border-0 py-1 px-3 focus:outline-none hover:bg-red-600 
                                         rounded-lg text-sm ml-5 mr-5 justify-center items-center">
                                     로그아웃
                                     <i className="fa-solid fa-right-from-bracket pl-2" />
                                 </button>
-                                
                             </Link>
                         ) : 
                         (
@@ -118,9 +118,17 @@ export default function Header({ accessToken, session }) {
                         )
                     }
 
-                    <h4 className="hover:text-gray-900 dark:hover:text-slate-50">
-                        { session?.user?.email?.split('@')?.[0] }
-                    </h4>
+                    {
+                        session?.user ?
+                        (
+                            <h4 className="dark:text-white text-black">
+                                { session?.user?.email?.split('@')?.[0] }님
+                            </h4>
+                        ) :
+                        (
+                            <h4 className="dark:text-white text-black">환영합니다</h4>
+                        )
+                    }
                 </nav>
 
             </div>

@@ -17,7 +17,7 @@ export async function GET(request: Request) {
         const { error } = await supabase.auth.exchangeCodeForSession(code);  
 
         if (!error)
-            return NextResponse.redirect(`${origin}${next}`); 
+            return NextResponse.redirect(`${origin}${next}/project/instagram`); 
     }
 
     return NextResponse.redirect(`${origin}/auth/auth-code-error`);  //실패 했을 경우 
