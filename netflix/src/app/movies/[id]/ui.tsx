@@ -1,6 +1,5 @@
 
 
-
 export default function UI({ movie }) {
     return (
         <div className="flex flex-col md:flex-row items-center m-10"> 

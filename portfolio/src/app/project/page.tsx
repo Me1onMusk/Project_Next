@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function Page() {
     return (
         <div>
-
+            
             <div className="container mx-auto flex px-5 py-24 pb-5 md:flex-row flex-col items-center">
                 <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
                 
@@ -151,7 +151,9 @@ export default function Page() {
                                         Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.
                                     </p>
                                     <div className="flex items-center flex-wrap">
-                                            <Link className="text-green-500 inline-flex items-center md:mb-2 lg:mb-0" href={'/project/instagram'}>보러가기</Link>
+                                            <Link className="text-green-500 inline-flex items-center md:mb-2 lg:mb-0" href={'/project/instagram'}>
+                                                보러가기
+                                            </Link>
                                             <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                             <path d="M5 12h14"></path>
                                             <path d="M12 5l7 7-7 7"></path>

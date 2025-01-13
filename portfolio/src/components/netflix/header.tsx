@@ -4,11 +4,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from 'react';
+import { useSearchStore } from '../../utils/zustand/store';
 
 export default function Header() {
 
-    const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { searchTerm, setSearchTerm } = useSearchStore(); 
 
+    const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setSearchTerm(e.target.value); // 검색어 상태 업데이트
     };
 
     return (
@@ -28,11 +31,14 @@ export default function Header() {
                 </ul>
             </nav>
             
-            <div className="flex w-full max-w-72 gap-2 items-center border border-black dark:border-white rounded-md p-2 text-black dark:text-white"> 
+            <div className="flex w-full max-w-72 gap-2 items-center border border-black dark:border-white rounded-md p-2
+                 text-black dark:text-white"> 
                 <i className="fas fa-search" /> 
                 <input 
                     className="bg-transparent" 
-                    placeholder="Search Movies" />  
+                    placeholder="Search Movies"
+                    value={searchTerm}
+                    onChange={handleSearchChange} />  
             </div>
         </header>
     );
