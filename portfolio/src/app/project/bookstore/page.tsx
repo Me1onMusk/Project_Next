@@ -8,7 +8,7 @@ export default function Page() {
                 <Link href={'/project/bookstore'}>📚OneBite Books</Link>
             </header>
             <main>
-
+            
             </main>
             <footer className="text-sm">
                 <div>제작 @김태영</div>
