@@ -59,7 +59,7 @@ export async function getAllMessage({
 };
 
 export default function ChatScreen({ }) {
-
+    
     const { selectedUserId } = useIdStore();
     const { selectedUserIndex } = useIndexStore();
     const [ message, setMessage ] = useState("");
