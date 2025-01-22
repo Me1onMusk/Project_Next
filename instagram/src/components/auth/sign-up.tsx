@@ -14,7 +14,7 @@ export default function SignUp({ setView }) {
     const [otp, setOtp] = useState('');
     const [password, setPassword] = useState('');
     const [confirmationReq, setConfirmReq] = useState(false);  //이메일 전송후 재전송 하지 못하게
-
+    
     // 카카오 로그인 부분 // 
     const signInWithKakao = async () => {
         const { data, error } = await supabase.auth.signInWithOAuth({ 
